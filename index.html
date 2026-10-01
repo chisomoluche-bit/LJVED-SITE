@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LJVDE Farms | Sustainable oil palm, Ogun State, Nigeria</title>
+<meta name="description" content="LJVDE Farms Limited is building an integrated, certification-ready oil palm plantation and processing business in Ogun State, Nigeria.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F7F3; --surface:#FFFFFF; --ink:#12261E; --muted:#556860; --line:#D3DCD5;
+  --accent:#1F5C43; --on-accent:#FFFFFF; --gold:#B87C12;
+  --band:#0E3324; --on-band:#EEF4EE; --on-band-muted:#A9C2B4; --band-gold:#E3B04B;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0B1812; --surface:#12251B; --ink:#E7EEE8; --muted:#9BAFA4; --line:#264034;
+    --accent:#72C49B; --on-accent:#06160F; --gold:#E3B04B; --band:#0F3526;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0B1812; --surface:#12251B; --ink:#E7EEE8; --muted:#9BAFA4; --line:#264034;
+  --accent:#72C49B; --on-accent:#06160F; --gold:#E3B04B; --band:#0F3526;
+}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);height:100%}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.12;margin:0;letter-spacing:-0.01em}
+h1{font-size:clamp(2.4rem,5.4vw,4.2rem);max-width:15ch}
+h1:focus{outline:none}
+h2{font-size:clamp(1.8rem,3.2vw,2.5rem);max-width:24ch}
+h3{font-size:1.25rem}
+p{margin:0 0 1em;max-width:64ch}
+.lede{font-size:1.2rem;color:var(--muted);max-width:56ch;margin-top:22px}
+section.blk{padding:80px 0}
+.rule{border:0;border-top:1px solid var(--line);margin:0}
+.src{color:var(--muted);font-size:.85rem;margin-top:22px}
+
+/* header */
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--bg) 93%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--serif);font-size:1.35rem;font-weight:600;letter-spacing:.01em}
+.brand svg{width:26px;height:26px}
+nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0;font-size:.95rem}
+nav a{text-decoration:none;color:var(--muted);padding:6px 0;border-bottom:2px solid transparent}
+nav a:hover{color:var(--ink)}
+nav a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--accent)}
+.menu-btn{display:none;font:inherit;background:transparent;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:8px 14px;cursor:pointer}
+@media(max-width:940px){
+  .menu-btn{display:block}
+  nav{position:absolute;left:0;right:0;top:64px;background:var(--bg);border-bottom:1px solid var(--line);display:none}
+  nav.open{display:block}
+  nav ul{flex-direction:column;gap:0;padding:8px 28px 18px}
+  nav li a{display:block;padding:12px 0;border-bottom:1px solid var(--line)}
+}
+
+.btn{display:inline-block;background:var(--accent);color:var(--on-accent);text-decoration:none;font-weight:600;padding:12px 20px;border-radius:6px;font-size:.98rem;border:0;cursor:pointer;font-family:var(--sans)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn-gold{background:var(--band-gold);color:#1A1405}
+.actions{display:flex;gap:14px;flex-wrap:wrap}
+
+.page[hidden]{display:none}
+.page-head{padding:72px 0 56px;border-bottom:1px solid var(--line)}
+
+/* hero */
+.hero{padding:72px 0 64px}
+.hero-grid{display:grid;grid-template-columns:1.02fr 1fr;gap:56px;align-items:center}
+.hero .lede{margin:26px 0 34px}
+.lattice-box{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 18px 14px;margin:0}
+.lattice-box svg{display:block;width:100%;height:auto}
+.lattice-ctl{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:10px}
+.lattice-ctl p{margin:0;font-size:.85rem;color:var(--muted);max-width:none}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.seg button{font:inherit;font-size:.88rem;background:transparent;color:var(--muted);border:0;padding:7px 14px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
+.palm{fill:var(--accent);opacity:0;animation:pop .5s ease-out forwards;transition:r .9s cubic-bezier(.3,.7,.3,1),fill-opacity .9s}
+@keyframes pop{to{opacity:1}}
+.lattice.mature .palm{fill-opacity:.32}
+.dim{font-family:var(--sans);font-size:13px;fill:var(--ink)}
+.dimline{stroke:var(--gold);stroke-width:1.6;fill:none}
+.plot{fill:none;stroke:var(--muted);stroke-width:1.2;stroke-dasharray:5 5}
+
+/* shared blocks */
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.three div{padding:26px 26px 26px 0}
+.three div+div{padding-left:26px;border-left:1px solid var(--line)}
+.three h3{margin-bottom:8px}
+.three p{color:var(--muted);margin:0}
+.two{display:grid;grid-template-columns:repeat(2,1fr);gap:0 64px;margin-top:40px}
+.two div{padding:22px 0;border-top:1px solid var(--line)}
+.two h3{font-size:1.2rem;margin-bottom:6px}
+.two p{margin:0;color:var(--muted)}
+.split{display:grid;grid-template-columns:1fr 1.25fr;gap:64px}
+.points article{padding:24px 0;border-top:1px solid var(--line)}
+.points article:first-child{border-top:0;padding-top:4px}
+.points h3{margin-bottom:8px}
+.points p{margin:0;color:var(--muted)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);margin-top:40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facts div{padding:22px 22px 22px 0}
+.facts div+div{padding-left:22px;border-left:1px solid var(--line)}
+.facts strong{display:block;font-family:var(--serif);font-weight:500;font-size:2.1rem;line-height:1.1}
+.facts span{display:block;color:var(--muted);font-size:.93rem;margin-top:6px}
+.band{background:var(--band);color:var(--on-band)}
+.band h2,.band h3{color:var(--on-band)}
+.band .lede,.band .two p,.band p{color:var(--on-band-muted)}
+.band .two div{border-top-color:rgba(255,255,255,.18)}
+.textlink{font-weight:600;text-decoration:none;border-bottom:2px solid var(--gold)}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);margin-top:44px;border-top:2px solid var(--accent)}
+.steps div{padding:22px 24px 0 0}
+.steps div+div{padding-left:24px;border-left:1px solid var(--line)}
+.steps h3{font-size:1.2rem;margin-bottom:8px}
+.steps p{color:var(--muted);margin:0;font-size:.98rem}
+
+.stages{display:grid;grid-template-columns:1fr 1.5fr 1fr;gap:22px;margin-top:44px}
+.stage{border:1px solid var(--line);border-radius:10px;padding:28px;background:var(--surface)}
+.stage h3{margin-bottom:10px}
+.stage p,.stage li{color:var(--muted);font-size:.98rem}
+.stage ul{padding-left:1.1em;margin:0}
+.stage.next{background:var(--band);border-color:var(--band)}
+.stage.next h3{color:var(--on-band);font-size:1.7rem}
+.stage.next p,.stage.next li{color:var(--on-band-muted)}
+.stage.next .tag{color:var(--band-gold)}
+.stage.future{border-style:dashed;background:transparent}
+.tag{font-weight:600;font-size:.88rem;color:var(--accent);margin-bottom:10px;display:block}
+
+.box{margin-top:40px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:26px}
+.box svg{width:100%;height:auto;display:block}
+.box text{font-family:var(--sans);font-size:13px;fill:var(--muted)}
+.box .t{fill:var(--ink);font-weight:600}
+.curve{fill:none;stroke:var(--accent);stroke-width:3}
+.area{fill:var(--accent);opacity:.12}
+.axis{stroke:var(--line);stroke-width:1.5}
+.sep{stroke:var(--line);stroke-dasharray:4 5}
+.bar1{fill:var(--accent)} .bar2{fill:var(--accent);opacity:.45}
+.bargap{fill:none;stroke:var(--gold);stroke-width:2;stroke-dasharray:6 5}
+.box.g text{font-size:14px}
+
+.risks{columns:2;column-gap:64px;margin-top:30px}
+.risks div{break-inside:avoid;padding:0 0 22px}
+.risks h3{font-size:1.1rem;margin-bottom:4px}
+.risks p{margin:0;color:var(--muted)}
+dl{margin:0}
+dt{font-weight:600;margin-top:18px}
+dt:first-child{margin-top:0}
+dd{margin:4px 0 0;color:var(--muted)}
+.terms{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:36px}
+
+footer{border-top:1px solid var(--line);padding:44px 0 52px;color:var(--muted);font-size:.9rem}
+footer .cols{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin:6px 0}
+footer a{text-decoration:none}
+footer a:hover{color:var(--ink);text-decoration:underline}
+footer .fine{margin-top:32px;font-size:.82rem;max-width:90ch}
+
+@media(max-width:940px){
+  .hero-grid,.split,.terms{grid-template-columns:1fr;gap:40px}
+  .three{grid-template-columns:1fr}
+  .three div,.three div+div{padding:22px 0;border-left:0}
+  .three div+div{border-top:1px solid var(--line)}
+  .facts{grid-template-columns:1fr 1fr}
+  .facts div:nth-child(3){padding-left:0;border-left:0}
+  .facts div:nth-child(n+3){border-top:1px solid var(--line)}
+  .steps{grid-template-columns:1fr 1fr}
+  .steps div:nth-child(3){padding-left:0;border-left:0}
+  .steps div:nth-child(n+3){margin-top:22px;border-top:1px solid var(--line)}
+  .stages{grid-template-columns:1fr}
+  .two{grid-template-columns:1fr}
+  .risks{columns:1}
+  footer .cols{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  section.blk{padding:60px 0}
+  .wrap{padding:0 20px}
+  nav ul{padding:8px 20px 18px}
+  .steps{grid-template-columns:1fr}
+  .steps div,.steps div+div{padding-left:0;border-left:0}
+  .steps div+div{margin-top:22px;border-top:1px solid var(--line)}
+  .facts strong{font-size:1.7rem}
+  footer .cols{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .palm{animation:none;opacity:1;transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#/" aria-label="LJVDE Farms home">
+      <svg viewBox="0 0 26 26" aria-hidden="true"><g fill="currentColor" style="color:var(--accent)"><circle cx="6" cy="6" r="3"/><circle cx="20" cy="6" r="3"/><circle cx="13" cy="18.1" r="3"/></g></svg>
+      LJVDE Farms
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainnav">Menu</button>
+    <nav id="mainnav" aria-label="Main">
+      <ul>
+        <li><a href="#/" data-nav="home">Home</a></li>
+        <li><a href="#/about" data-nav="about">About us</a></li>
+        <li><a href="#/business" data-nav="business">What we do</a></li>
+        <li><a href="#/growth" data-nav="growth">Our plan</a></li>
+        <li><a href="#/sustainability" data-nav="sustainability">Sustainability</a></li>
+        <li><a href="#/palm-oil-in-nigeria" data-nav="palm-oil-in-nigeria">Palm oil in Nigeria</a></li>
+        <li><a href="#/contact" data-nav="contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HOME -->
+<div class="page" data-route="home" data-title="LJVDE Farms | Sustainable oil palm, Ogun State, Nigeria">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <h1 tabindex="-1">Growing palm oil the right way, from seedling to mill.</h1>
+          <p class="lede">LJVDE Farms is building an integrated oil palm plantation and processing business in Ogun State, Nigeria, with sustainability and traceability built in from the start.</p>
+          <div class="actions">
+            <a class="btn" href="#/business">What we do</a>
+            <a class="btn ghost" href="#/sustainability">Our approach</a>
+          </div>
+        </div>
+        <figure class="lattice-box">
+          <svg id="lattice" class="lattice" viewBox="0 0 640 560" role="img" aria-label="Diagram of oil palms planted in a 9 metre triangular pattern inside a plot outline. Illustrative.">
+            <defs><clipPath id="clip"><polygon points="70,50 390,22 600,96 618,330 520,520 250,540 70,456 34,236"/></clipPath></defs>
+            <polygon class="plot" points="70,50 390,22 600,96 618,330 520,520 250,540 70,456 34,236"/>
+            <g clip-path="url(#clip)" id="palms"></g>
+            <g id="dims"></g>
+          </svg>
+          <div class="lattice-ctl">
+            <div class="seg" role="group" aria-label="Canopy view">
+              <button type="button" id="b-plant" aria-pressed="true">At planting</button>
+              <button type="button" id="b-mature" aria-pressed="false">At maturity</button>
+            </div>
+            <p>Industry-standard 9 m triangular planting. Illustrative layout.</p>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk" style="padding-top:0">
+    <div class="wrap">
+      <div class="three">
+        <div><h3>Integrated</h3><p>Plantation and mill are planned together, so quality and traceability are managed as one chain.</p></div>
+        <div><h3>Standards-first</h3><p>We are working toward RSPO certification and keeping land records ready for international traceability rules.</p></div>
+        <div><h3>Rooted locally</h3><p>Our estate sits in Nigeria's palm belt in Ogun State, creating work and supporting local supply of a staple product.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+  <section class="blk">
+    <div class="wrap split">
+      <div>
+        <h2>A staple Nigeria needs more of</h2>
+        <p class="lede">Palm oil goes into cooking, food manufacturing, soap and cosmetics. Nigeria uses far more than it grows.</p>
+        <p style="margin-top:26px"><a class="textlink" href="#/palm-oil-in-nigeria">Read about palm oil in Nigeria</a></p>
+      </div>
+      <div class="facts" style="margin-top:0;grid-template-columns:1fr 1fr">
+        <div><strong>2.5 Mt+</strong><span>Annual demand, in tonnes</span></div>
+        <div><strong>~1.4 Mt</strong><span>Domestic production, in tonnes</span></div>
+        <div style="padding-left:0;border-left:0;border-top:1px solid var(--line)"><strong>3M+ ha</strong><span>Land suitable for oil palm</span></div>
+        <div style="border-top:1px solid var(--line)"><strong>40%+</strong><span>Nigeria's share of world supply in the 1960s</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk band">
+    <div class="wrap">
+      <h2>Responsible production is part of how we plan</h2>
+      <p class="lede">From the choice of planting material to the way we keep our land records, we are building to standards that customers and regulators recognise.</p>
+      <p style="margin-top:26px"><a class="textlink" style="color:var(--on-band)" href="#/sustainability">Our approach to sustainability</a></p>
+    </div>
+  </section>
+</div>
+
+<!-- ABOUT -->
+<div class="page" data-route="about" data-title="About us | LJVDE Farms" hidden>
+  <div class="page-head"><div class="wrap">
+    <h1 tabindex="-1">About LJVDE Farms</h1>
+    <p class="lede">A registered Nigerian agribusiness growing, and in time processing, palm oil to standards that stand up to scrutiny.</p>
+  </div></div>
+
+  <section class="blk">
+    <div class="wrap split">
+      <div><h2>Our story</h2></div>
+      <div>
+        <p>Nigeria was once the world's leading palm oil supplier and today imports a large share of what it consumes. LJVDE Farms Limited was formed to be part of the recovery: building a well-run, well-documented oil palm estate in the region where the crop has always thrived.</p>
+        <p>We are an early-stage company and we say so. Our first priority is to establish a high-quality plantation, then to add our own mill, and to do both in a way that can be verified.</p>
+        <p>LJVDE Farms Limited is registered with the Corporate Affairs Commission of Nigeria.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+  <section class="blk">
+    <div class="wrap">
+      <h2>What guides us</h2>
+      <div class="two">
+        <div><h3>Integrity and openness</h3><p>We keep accurate records, state our targets as targets, and are candid about risks.</p></div>
+        <div><h3>Stewardship of land</h3><p>We plant on land already in agricultural use and plan for soil, water and long-term productivity.</p></div>
+        <div><h3>Quality</h3><p>Good planting material, good agronomy and fresh-fruit processing produce better oil.</p></div>
+        <div><h3>Long-term thinking</h3><p>Oil palm is a twenty-five-year crop. We make decisions with that horizon in mind.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+  <section class="blk">
+    <div class="wrap split">
+      <div><h2>Where we work</h2></div>
+      <div>
+        <p>Our estate is in Egbeda Village, Odeda Local Government Area, Ogun State, within Nigeria's traditional oil palm belt. The region combines suitable rainfall and soils with road access to major markets in the south-west.</p>
+        <h3 style="margin:28px 0 8px">How we are run</h3>
+        <p>We operate with documented financial controls and expenditure tracked against approved budgets. Reporting to our stakeholders is structured and regular.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- BUSINESS -->
+<div class="page" data-route="business" data-title="What we do | LJVDE Farms" hidden>
+  <div class="page-head"><div class="wrap">
+    <h1 tabindex="-1">What we do</h1>
+    <p class="lede">One chain from seedling to sale, planned around quality, traceability and cost control.</p>
+  </div></div>
+
+  <section class="blk">
+    <div class="wrap">
+      <h2>Four stages, one business</h2>
+      <div class="steps">
+        <div><h3>Land and planting</h3><p>Documented, geolocated land. High-yielding Tenera planting material from the Nigerian Institute for Oil Palm Research (NIFOR).</p></div>
+        <div><h3>Plantation care</h3><p>Agronomy planned around soil, water and yield, with records kept to certification standards.</p></div>
+        <div><h3>Owned processing</h3><p>A mill built to international standards, so fruit is processed fresh and oil quality is controlled.</p></div>
+        <div><h3>Market</h3><p>Nigerian demand first, with the standards in place to serve regulated export markets over time.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+  <section class="blk">
+    <div class="wrap">
+      <h2>From one fruit, three products</h2>
+      <p class="lede">Once our mill is operating, palm fruit is processed into:</p>
+      <div class="three" style="margin-top:32px">
+        <div><h3>Crude palm oil</h3><p>Pressed from the fleshy fruit. Used in cooking, food manufacturing and soap.</p></div>
+        <div><h3>Palm kernel oil</h3><p>Extracted from the kernel. Used in cosmetics, confectionery and cleaning products.</p></div>
+        <div><h3>Palm kernel cake</h3><p>The residue after kernel oil extraction, used as livestock feed.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+  <section class="blk">
+    <div class="wrap">
+      <h2>The life of an oil palm</h2>
+      <p class="lede">Oil palm takes a few years to begin fruiting, then produces for around twenty-five years.</p>
+      <div class="box">
+        <svg viewBox="0 0 900 300" role="img" aria-label="Generic oil palm output curve: no fruit in the first years, a ramp up to maturity, a long plateau, then gradual decline. Illustrative only.">
+          <line class="axis" x1="60" y1="230" x2="860" y2="230"/>
+          <line class="axis" x1="60" y1="30" x2="60" y2="230"/>
+          <line class="sep" x1="200" y1="40" x2="200" y2="230"/>
+          <line class="sep" x1="340" y1="40" x2="340" y2="230"/>
+          <line class="sep" x1="560" y1="40" x2="560" y2="230"/>
+          <line class="sep" x1="740" y1="40" x2="740" y2="230"/>
+          <path class="area" d="M60,230 L200,230 C240,228 290,190 340,120 C380,68 430,52 470,50 L700,50 C760,54 810,90 860,140 L860,230 Z"/>
+          <path class="curve" d="M60,230 L200,230 C240,228 290,190 340,120 C380,68 430,52 470,50 L700,50 C760,54 810,90 860,140"/>
+          <text x="64" y="44">Relative fruit output</text>
+          <text class="t" x="70" y="256">Establishment</text><text x="70" y="274">Years 0 to 3</text>
+          <text class="t" x="208" y="256">Early bearing</text><text x="208" y="274">Output begins</text>
+          <text class="t" x="348" y="256">Ramp to maturity</text><text x="348" y="274">Yields climb</text>
+          <text class="t" x="568" y="256">Mature plateau</text><text x="568" y="274">Longest phase</text>
+          <text class="t" x="748" y="256">Late life</text><text x="748" y="274">Replanting</text>
+        </svg>
+      </div>
+      <p class="src">A generic oil palm production cycle, illustrative and not a forecast.</p>
+    </div>
+  </section>
+</div>
+
+<!-- GROWTH -->
+<div class="page" data-route="growth" data-title="Our plan | LJVDE Farms" hidden>
+  <div class="page-head"><div class="wrap">
+    <h1 tabindex="-1">Our plan</h1>
+    <p class="lede">We grow in stages, proving each before committing to the next.</p>
+  </div></div>
+
+  <section class="blk">
+    <div class="wrap">
+      <div class="stages" style="margin-top:0">
+        <div class="stage">
+          <span class="tag">Phase 1 · Foundation</span>
+          <h3>Establish</h3>
+          <ul>
+            <li>Phase 1 land secured and in preparation</li>
+            <li>Planting from the 2027 season</li>
+            <li>Compliance and reporting systems built in from the start</li>
+          </ul>
+        </div>
+        <div class="stage next">
+          <span class="tag">Phase 2 · Next five years</span>
+          <h3>Scale to 100 acres with our own mill</h3>
+          <ul>
+            <li>Additional land, taking the estate toward 100 acres</li>
+            <li>Planting and plantation management through establishment</li>
+            <li>A small-scale mill built to RSPO and international standards, owned from Year 1</li>
+            <li>Operating costs until the estate matures</li>
+          </ul>
+        </div>
+        <div class="stage future">
+          <span class="tag">Phase 3 · Longer term</span>
+          <h3>Expand</h3>
+          <p>Beyond year five: a larger estate and commercial-scale milling, potentially alongside outgrower partnerships. This is direction, not a commitment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+  <section class="blk">
+    <div class="wrap">
+      <h2>Why the mill comes early</h2>
+      <div class="two">
+        <div><h3>Fresh fruit matters</h3><p>Palm fruit must be processed soon after harvest. A mill close to the estate protects oil quality.</p></div>
+        <div><h3>Traceability stays in one place</h3><p>Plot-to-mill records are what certification schemes and export buyers ask for.</p></div>
+      </div>
+      <p style="margin-top:30px">Growth of this kind is supported by patient capital. We describe how we work with partners on our <a class="textlink" href="#/partnerships">partnerships page</a>.</p>
+    </div>
+  </section>
+</div>
+
+<!-- SUSTAINABILITY -->
+<div class="page" data-route="sustainability" data-title="Sustainability | LJVDE Farms" hidden>
+  <div class="page-head"><div class="wrap">
+    <h1 tabindex="-1">Sustainability</h1>
+    <p class="lede">Customers, banks and regulators increasingly ask how palm oil was grown. We are building to be able to answer.</p>
+  </div></div>
+
+  <section class="blk">
+    <div class="wrap">
+      <div class="two" style="margin-top:0">
+        <div><h3>RSPO certification pathway</h3><p>Our membership application is under way, with certification as the 2030 target. Timing depends on the RSPO process.</p></div>
+        <div><h3>Traceable land records</h3><p>Surveyed boundaries converted to geospatial data, so every plot can be located and its land history documented. This is also the core requirement of the EU deforestation regulation.</p></div>
+        <div><h3>No new deforestation</h3><p>Planting is on land already in agricultural use. We do not clear primary forest.</p></div>
+        <div><h3>Soil, water and inputs</h3><p>Site planning for drainage and irrigation, and measured use of fertiliser and crop protection.</p></div>
+        <div><h3>Local jobs and incomes</h3><p>Permanent and seasonal employment, and local procurement wherever possible.</p></div>
+        <div><h3>Import substitution</h3><p>Every tonne produced locally reduces reliance on imported oil and the foreign exchange it consumes.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk band">
+    <div class="wrap">
+      <h2>Contribution to the UN Sustainable Development Goals</h2>
+      <p class="lede">Our activities contribute to zero hunger (Goal 2), decent work and economic growth (Goal 8), responsible consumption and production (Goal 12) and life on land (Goal 15).</p>
+    </div>
+  </section>
+</div>
+
+<!-- MARKET -->
+<div class="page" data-route="palm-oil-in-nigeria" data-title="Palm oil in Nigeria | LJVDE Farms" hidden>
+  <div class="page-head"><div class="wrap">
+    <h1 tabindex="-1">Palm oil in Nigeria</h1>
+    <p class="lede">In the 1960s Nigeria supplied over 40% of the world's palm oil. Today it is a net importer.</p>
+  </div></div>
+
+  <section class="blk">
+    <div class="wrap">
+      <div class="box g" style="margin-top:0">
+        <svg viewBox="0 0 900 230" role="img" aria-label="Bar chart: Nigeria annual palm oil demand above 2.5 million tonnes versus domestic production of about 1.4 million tonnes, a gap of over 1 million tonnes.">
+          <text class="t" x="0" y="62">Annual demand</text>
+          <rect class="bar1" x="200" y="36" width="625" height="40" rx="3"/>
+          <text class="t" x="835" y="62" style="fill:var(--ink)">2.5+ Mt</text>
+          <text class="t" x="0" y="142">Domestic production</text>
+          <rect class="bar2" x="200" y="116" width="350" height="40" rx="3"/>
+          <text class="t" x="560" y="142" style="fill:var(--ink)">~1.4 Mt</text>
+          <rect class="bargap" x="550" y="116" width="275" height="40" rx="3"/>
+          <text x="600" y="190">Gap: over 1 Mt a year, filled by imports</text>
+        </svg>
+      </div>
+      <p class="src">Figures as stated by Nigeria's Federal Ministry of Agriculture and Food Security, April 2026. Mt = million tonnes.</p>
+
+      <div class="facts">
+        <div><strong>1 Mt+</strong><span>Annual supply shortfall</span></div>
+        <div><strong>US$500–600M</strong><span>Yearly import bill</span></div>
+        <div><strong>3M+ ha</strong><span>Land suitable for oil palm</span></div>
+        <div><strong>US$70B+</strong><span>Global palm oil market</span></div>
+      </div>
+
+      <div class="two">
+        <div><h3>Widely used</h3><p>Palm oil features in cooking, food manufacturing, soap, cosmetics, pharmaceuticals and biofuels.</p></div>
+        <div><h3>A question of scale</h3><p>Government has pointed to limited scale and weak coordination across the value chain, rather than land or climate, as the main constraints.</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CONTACT -->
+<div class="page" data-route="contact" data-title="Contact | LJVDE Farms" hidden>
+  <div class="page-head"><div class="wrap">
+    <h1 tabindex="-1">Contact us</h1>
+    <p class="lede">For general enquiries, media, supplier or partnership conversations, write to us.</p>
+  </div></div>
+  <section class="blk">
+    <div class="wrap split">
+      <div><h2>Get in touch</h2></div>
+      <div>
+        <p><a class="textlink" href="mailto:hello@ljvde.example">hello@ljvde.example</a></p>
+        <p>LJVDE Farms Limited<br>Egbeda Village, Odeda LGA<br>Ogun State, Nigeria</p>
+        <p style="margin-top:28px">Organisations interested in working with us can read about <a class="textlink" href="#/partnerships">partnerships</a>.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- PARTNERSHIPS (footer-linked) -->
+<div class="page" data-route="partnerships" data-title="Partnerships | LJVDE Farms" hidden>
+  <div class="page-head"><div class="wrap">
+    <h1 tabindex="-1">Partnerships</h1>
+    <p class="lede">We are open to conversations with aligned, long-term partners, including development finance institutions and institutional investors.</p>
+  </div></div>
+  <section class="blk">
+    <div class="wrap">
+      <div class="terms" style="margin-top:0">
+        <dl>
+          <dt>Structure</dt><dd>Equity in LJVDE Farms Limited.</dd>
+          <dt>Sector and location</dt><dd>Agribusiness (oil palm), Ogun State, Nigeria.</dd>
+          <dt>Horizon</dt><dd>A five-year capital plan for Phase 2.</dd>
+          <dt>Currency</dt><dd>Presented in pounds sterling and Nigerian naira.</dd>
+        </dl>
+        <dl>
+          <dt>What partner capital supports</dt><dd>Land acquisition and documentation, planting and establishment, a standards-ready mill, and operating costs through to maturity.</dd>
+          <dt>How to start</dt><dd>Write to <a class="textlink" href="mailto:partners@ljvde.example">partners@ljvde.example</a> and we will share further information with qualified parties.</dd>
+        </dl>
+      </div>
+
+      <h2 style="margin-top:72px">Things partners should know</h2>
+      <div class="risks">
+        <div><h3>Long time to maturity</h3><p>Palms take years to fruit, so capital is committed well before full output.</p></div>
+        <div><h3>Yield and weather</h3><p>Rainfall, soil and management affect yields.</p></div>
+        <div><h3>Commodity and currency</h3><p>Palm oil prices and the naira exchange rate can move against plan.</p></div>
+        <div><h3>Regulation and certification</h3><p>Certification and trade rules depend on external bodies and may change.</p></div>
+        <div><h3>Land and title</h3><p>Expansion depends on completing acquisitions and documentation.</p></div>
+        <div><h3>Early-stage execution</h3><p>Building the mill and scaling the estate will test our systems.</p></div>
+      </div>
+      <p class="src">This page is for information only. It is not an offer of securities and is not directed at the general public. Any investment would be subject to due diligence and definitive agreements.</p>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <strong style="font-family:var(--serif);font-size:1.2rem;color:var(--ink)">LJVDE Farms</strong>
+        <p style="margin-top:8px">Sustainable oil palm, Ogun State, Nigeria.</p>
+      </div>
+      <ul>
+        <li><a href="#/about">About us</a></li>
+        <li><a href="#/business">What we do</a></li>
+        <li><a href="#/growth">Our plan</a></li>
+        <li><a href="#/sustainability">Sustainability</a></li>
+      </ul>
+      <ul>
+        <li><a href="#/palm-oil-in-nigeria">Palm oil in Nigeria</a></li>
+        <li><a href="#/contact">Contact</a></li>
+        <li><a href="#/partnerships">Partnerships</a></li>
+      </ul>
+    </div>
+    <p class="fine">LJVDE Farms Limited. This website provides general information about the company and is not an offer of securities or investment advice. Statements about future plans, certification and performance are targets, not guarantees, and may change. Market data is attributed to the sources named and has not been independently verified by LJVDE.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* lattice */
+  var s = 40, rowH = s * 0.866, NS = "http://www.w3.org/2000/svg";
+  var g = document.getElementById("palms"), svg = document.getElementById("lattice"), dims = document.getElementById("dims");
+  for (var r = 0; r < 18; r++) {
+    for (var c = 0; c < 17; c++) {
+      var x = 20 + c * s + (r % 2 ? s / 2 : 0), y = 26 + r * rowH;
+      var el = document.createElementNS(NS, "circle");
+      el.setAttribute("class", "palm");
+      el.setAttribute("cx", x.toFixed(1)); el.setAttribute("cy", y.toFixed(1));
+      el.style.r = "3.2px";
+      el.style.animationDelay = ((x + y) / 1400).toFixed(2) + "s";
+      g.appendChild(el);
+    }
+  }
+  var x1 = 20 + 6 * s, y1 = 26 + 6 * rowH, x2 = x1 + s, y3 = y1 + rowH;
+  function line(a, b, c, d, cls) { var l = document.createElementNS(NS, "line"); l.setAttribute("x1", a); l.setAttribute("y1", b); l.setAttribute("x2", c); l.setAttribute("y2", d); l.setAttribute("class", cls); dims.appendChild(l); }
+  function label(x, y, t, anchor) { var e = document.createElementNS(NS, "text"); e.setAttribute("x", x); e.setAttribute("y", y); e.setAttribute("class", "dim"); if (anchor) e.setAttribute("text-anchor", anchor); e.textContent = t; dims.appendChild(e); }
+  line(x1, y1, x2, y1, "dimline");
+  label((x1 + x2) / 2, y1 - 10, "9 m", "middle");
+  line(x1, y1, x1 + s / 2, y3, "dimline");
+  label(x1 - 8, y1 + 20, "Rows 7.8 m apart", "end");
+  var bp = document.getElementById("b-plant"), bm = document.getElementById("b-mature");
+  function setMature(on) {
+    svg.classList.toggle("mature", on);
+    var rad = on ? "21px" : "3.2px";
+    g.querySelectorAll(".palm").forEach(function(p){ p.style.r = rad; });
+    bp.setAttribute("aria-pressed", String(!on)); bm.setAttribute("aria-pressed", String(on));
+  }
+  bp.addEventListener("click", function(){ setMature(false); });
+  bm.addEventListener("click", function(){ setMature(true); });
+
+  /* router */
+  var pages = Array.prototype.slice.call(document.querySelectorAll(".page"));
+  var links = Array.prototype.slice.call(document.querySelectorAll("[data-nav]"));
+  var nav = document.getElementById("mainnav"), btn = document.getElementById("menuBtn");
+  var first = true;
+  function route() {
+    var h = (location.hash || "#/").replace(/^#\/?/, "") || "home";
+    var page = pages.filter(function(p){ return p.dataset.route === h; })[0] || pages[0];
+    pages.forEach(function(p){ p.hidden = (p !== page); });
+    links.forEach(function(a){
+      if (a.dataset.nav === page.dataset.route) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
+    document.title = page.dataset.title;
+    nav.classList.remove("open"); btn.setAttribute("aria-expanded", "false");
+    window.scrollTo(0, 0);
+    if (!first) { var h1 = page.querySelector("h1"); if (h1) h1.focus({preventScroll:true}); }
+    first = false;
+  }
+  btn.addEventListener("click", function(){
+    var o = nav.classList.toggle("open"); btn.setAttribute("aria-expanded", String(o));
+  });
+  window.addEventListener("hashchange", route);
+  route();
+})();
+</script>
+</body>
+</html>
